@@ -1,6 +1,7 @@
 [Unit]
 Description=8723bs Bluetooth hciattach
-BindsTo=dev-%i
+BindsTo=dev-%i.device
+After=dev-%i.device
 
 [Service]
 Type=simple
