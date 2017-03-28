@@ -10,6 +10,7 @@ ExecStart=/sbin/rtk_hciattach -n -s 115200 %i rtk_h5
 # Check to make sure that the device actually showed up
 ExecStartPost=/bin/sleep 5
 ExecStartPost=/usr/sbin/rfkill unblock all
-ExecStartPost=/usr/bin/hciconfig hci0 up
+# Make device discoverable/connectable by default
+ExecStartPost=/usr/bin/hciconfig hci0 up piscan
 Restart=always
 RestartSec=10
