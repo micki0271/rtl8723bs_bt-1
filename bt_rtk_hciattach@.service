@@ -2,6 +2,7 @@
 Description=8723bs Bluetooth hciattach
 BindsTo=dev-%i.device
 After=dev-%i.device
+ConditionPathExists=/sys/class/ieee80211/phy1
 
 [Service]
 Type=simple
